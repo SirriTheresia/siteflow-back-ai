@@ -34,10 +34,8 @@ async function startServer() {
     app.use(express.json());
 
     // Enable CORS
-    app.use(cors({
-      origin: process.env.FRONTEND_URL || 'http://localhost:5173',
-      credentials: true
-    }));
+    app.use(cors());
+
 
     // Simple auth middleware for version and device control
     const { simpleAuth } = require('./middleware/simpleAuth');
